@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Protest Riot', sans-serif;
+    font-size: 62.5%;
+    background-color: rgb(238, 237, 237);
+}
+
+header {
+    text-align: center;
+    padding: 3rem;
+}
+
+header>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header>h1>i {
+    color: rgb(28, 167, 74);
+}
+
+header>h1>i:hover {
+    color: rgb(120, 196, 120);
+    transition: .5s;
+}
+
+header h1 {
+    font-size: 5rem;
+    color: rgb(26, 25, 25);
+}
+
+header button {
+    font-size: 3.6rem;
+    color: brown;
+    border: none;
+    background-color: transparent;
+}
+
+.hidden {
+    display: none;
+}
+
+
+header>h3>svg {
+    color: rgb(250, 45, 45);
+}
+
+header>h3>svg:hover {
+    color: rgb(248, 166, 166);
+    transition: .5s;
+}
+
+section {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 5rem;
+    padding: 2rem;
+}
+
+section>div>p {
+    font-size: 3rem;
+}
+
+footer {
+
+    text-align: center;
+    font-size: .8rem;
+    font-weight: 100;
+}

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Danilo's Game</title>
+    <!-- bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+    <!-- awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS link -->
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <h1><i class="fa-solid fa-clover pe-4"></i>Start playing<i class="fa-solid fa-clover ps-4"></i></h1>
+        <div>
+            <button class="hidden" id="go-btn">Go!!!</button>
+            <button class="hidden" id="restart-btn">Restart!</button>
+            <div>
+                <iframe src="https://giphy.com/embed/OOn7N4CfPuUTmNqFD7" width="280" height="280" frameBorder="0"
+                    class="hidden giphy-embed rounded-5" id="irish" allowFullScreen></iframe>
+                <p><a href="https://giphy.com/gifs/SportsManias-sports-emoji-sportsmanias-OOn7N4CfPuUTmNqFD7"></a></p>
+                <iframe src="https://giphy.com/embed/StKiS6x698JAl9d6cx" frameBorder="0"
+                    class=" hidden giphy-embed rounded-5" id="minion" width="280" height="280" allowFullScreen></iframe>
+                <p><a href="https://giphy.com/gifs/minions-minions-2-rise-of-gru-StKiS6x698JAl9d6cx"></a></p>
+
+            </div>
+        </div>
+
+        <h3 class="hidden" id="player1"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                fill="currentColor" class="bi bi-flag-fill" viewBox="0 0 16 16">
+                <path
+                    d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001" />
+            </svg></i>Player 1 Wins!</h3>
+        <h3 class="hidden" id="player2"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                fill="currentColor" class="bi bi-flag-fill" viewBox="0 0 16 16">
+                <path
+                    d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001" />
+            </svg>Player 2 Wins!</h3>
+        <h3 class="hidden draw" id="draw"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                fill="currentColor" class="bi bi-flag-fill" viewBox="0 0 16 16">
+                <path
+                    d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001" />
+            </svg>Draaawwwwwww...<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                class="bi bi-flag-fill" viewBox="0 0 16 16">
+                <path
+                    d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001" />
+            </svg></h3>
+    </header>
+
+    <section>
+        <div>
+            <p>Player 1</p>
+            <img class="hidden dado" height="76" src="IMAGES/dado.0.PNG" alt="dado interrogaçao">
+
+            <img class="hidden img1" height="76" src="IMAGES/dado.1.PNG">
+
+        </div>
+        <div>
+            <p>Player 2</p>
+            <img class="hidden dado" height="76" src="IMAGES/dado.0.PNG" alt="dado interrogaçao">
+
+            <img class="hidden img2" height="76" src="IMAGES/dado.1.PNG">
+
+        </div>
+    </section>
+
+    <footer class="pt-2">
+        <p>Danilo Costa</p>
+    </footer>
+
+    <!-- my JS -->
+    <script src="./JS/JS.js"></script>
+    <!-- bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
